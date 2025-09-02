@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理者ダッシュボード</title>
+    <link rel="stylesheet" th:href="@{/css/admin-dashboard.css}">
+</head>
+<body>
+    <header>
+        <h1>管理者ダッシュボード</h1>
+        <p th:text="'ログイン中: ' + ${adminName}"></p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/admin/staff}">スタッフ管理</a></li>
+            <li><a th:href="@{/admin/customers}">顧客情報管理</a></li>
+            <li><a th:href="@{/admin/care-plans}">施術プラン管理</a></li>
+            <li><a th:href="@{/admin/reports}">売上レポート</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>ダッシュボードの内容はここに表示されます</p>
+    </main>
+</body>
+</html>
