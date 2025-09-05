@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.StaffMapper">
+
+    <insert id="insertStaff" parameterType="com.example.demo.Staff">
+        INSERT INTO staff_users
+        (email, password, full_name, phone, role, created_at, updated_at)
+        VALUES
+        (#{email}, #{password}, #{fullName}, #{phone}, #{role}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    </insert>
+    
+    <select id="findAll" resultType="com.example.demo.Staff">
+	    SELECT 
+	        user_id AS userId,
+	        email,
+	        password,
+	        full_name AS fullName,
+	        phone,
+	        role,
+	        status
+	    FROM staff_users
+	    WHERE status = 'ACTIVE'
+	    ORDER BY id ASC
+    </select>
+    
+    <update id="deleteStaff" parameterType="String">
+	    UPDATE staff_users
+	    SET status = 'INACTIVE', updated_at = CURRENT_TIMESTAMP
+	    WHERE user_id = #{userId}
+	</update>
+	
+	<select id="findByUserId" parameterType="String" resultType="com.example.demo.Staff">
+	    SELECT *
+	    FROM staff_users
+	    WHERE user_id = #{userId}
+	</select>
+	
+	<update id="updateStaff" parameterType="com.example.demo.Staff">
+	    UPDATE staff_users
+	    SET full_name = #{fullname},
+	        email = #{email},
+	        role = #{role},
+	        updated_at = CURRENT_TIMESTAMP
+	    WHERE user_id = #{userId}
+	</update>
+
+	
+</mapper>

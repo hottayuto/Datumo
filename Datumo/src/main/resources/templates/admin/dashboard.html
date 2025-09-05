@@ -6,22 +6,35 @@
     <link rel="stylesheet" th:href="@{/css/admin-dashboard.css}">
 </head>
 <body>
-    <header>
-        <h1>管理者ダッシュボード</h1>
+<header>
+    <h1>管理者ダッシュボード</h1>
+    <div class="header-right">
         <p th:text="'ログイン中: ' + ${adminName}"></p>
-    </header>
+        <div class="account-menu">
+            <button class="account-btn">⚙ アカウント</button>
+            <ul class="dropdown">
+                <li><a th:href="@{/admin/account/profile}">プロフィール編集</a></li>
+                <li><a th:href="@{/admin/account/password}">パスワード変更</a></li>
+                <li><a th:href="@{/logout}">ログアウト</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
 
-    <nav>
-        <ul>
-            <li><a th:href="@{/admin/staff}">スタッフ管理</a></li>
-            <li><a th:href="@{/admin/customers}">顧客情報管理</a></li>
-            <li><a th:href="@{/admin/care-plans}">施術プラン管理</a></li>
-            <li><a th:href="@{/admin/reports}">売上レポート</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a th:href="@{/admin/staff}">スタッフ管理</a></li>
+        <li><a th:href="@{/admin/customers}">顧客情報管理</a></li>
+        <li><a th:href="@{/admin/care-plans}">施術プラン管理</a></li>
+        <li><a th:href="@{/admin/reports}">売上レポート</a></li>
+    </ul>
+</nav>
 
-    <main>
-        <p>ダッシュボードの内容はここに表示されます</p>
-    </main>
+<main>
+    <p>ダッシュボードの内容はここに表示されます</p>
+</main>
+
+<!-- JS読み込み -->
+<script th:src="@{/js/admin-dashboard.js}"></script>
 </body>
 </html>

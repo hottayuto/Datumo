@@ -1,38 +1,209 @@
+/* 全体 */
 body {
-    font-family: sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #f2f2f2;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    background-color: #ddd;
-    margin: 0;
-}
-
-nav a {
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
+    font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+    background-color: #f8f9fa;
     color: #333;
 }
 
-nav a:hover {
-    background-color: #bbb;
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
     color: white;
+    padding: 15px 20px;
 }
 
-main {
-    padding: 2rem;
-    text-align: center;
+header h1 {
+    margin: 0;
+    font-size: 20px;
 }
+
+/* ヘッダー右側 */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right p {
+    margin: 0;
+}
+
+/* アカウントメニュー */
+.account-menu {
+    position: relative;
+}
+
+/* アカウントボタン */
+.account-btn {
+    background-color: #3d566e;   /* 少し明るめの濃紺 */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* プルダウン感を出すための ▼ マーク */
+.account-btn::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+/* ホバー時 */
+.account-btn:hover {
+    background-color: #4a6a89;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    width: 160px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown li {
+    padding: 8px 12px;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+/* ナビゲーション（ダッシュボード用） */
+nav {
+    background-color: #34495e;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #3d566e;
+}
+
+/* コンテンツ共通 */
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 戻るリンク（スタッフ管理などのサブページ用） */
+header nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.actions {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn:hover {
+    background: #0056b3;
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-table th, .staff-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}
+
+.staff-table th {
+    background: #f4f4f4;
+}
+
+.edit-link {
+    color: #007bff;
+    text-decoration: none;
+}
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.delete-link {
+    color: #dc3545;
+    text-decoration: none;
+}
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+/*===== スタッフ新規登録 ======*/
+
+.staff-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.staff-form label {
+    font-weight: bold;
+}
+
+.staff-form input,
+.staff-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.staff-form button {
+    margin-top: 1rem;
+}
+

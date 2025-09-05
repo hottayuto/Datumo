@@ -1,0 +1,20 @@
+<form th:action="@{/admin/staff/update}" method="post" th:object="${staff}">
+    <input type="hidden" th:field="*{userId}" />
+
+    <label>名前：</label>
+    <input type="text" th:field="*{fullName}" /><br/>
+
+    <label>メール：</label>
+    <input type="email" th:field="*{email}" /><br/>
+
+    <label>電話番号：</label>
+    <input type="text" th:field="*{phone}" /><br/>
+
+    <label>権限：</label>
+    <select th:field="*{role}">
+        <option value="ADMIN">管理者</option>
+        <option value="STAFF">スタッフ</option>
+    </select><br/>
+
+    <button type="submit">更新</button>
+</form>

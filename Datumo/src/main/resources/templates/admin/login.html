@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>管理者ログイン</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" th:href="@{/css/admin-login.css}">
 </head>
 <body>
@@ -16,8 +15,5 @@
     </form>
     <p th:if="${error}" th:text="${error}" class="error"></p>
   </div>
-
-  <!-- 外部JS -->
-  <script th:src="@{/js/admin-login.js}"></script>
 </body>
 </html>
