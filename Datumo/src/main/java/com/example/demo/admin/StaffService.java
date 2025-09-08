@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.admin;
 
 import java.util.List;
 
@@ -19,6 +19,14 @@ public class StaffService {
         // パスワードをハッシュ化して保存
         staff.setPassword(passwordEncoder.encode(staff.getPassword()));
         staffMapper.insertStaff(staff);
+    }
+    
+    public boolean existsByEmail(String email) {
+        return staffMapper.countByEmail(email) > 0;
+    }
+
+    public boolean existsByPhone(String phone) {
+        return staffMapper.countByPhone(phone) > 0;
     }
     
     public List<Staff> getAllStaff() {

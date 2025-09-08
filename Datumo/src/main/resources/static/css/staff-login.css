@@ -1,0 +1,73 @@
+/* ===== 全体レイアウト ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* 中央寄せ */
+.login-container {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 30px 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+/* ===== フォーム ===== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.login-form label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* ===== ボタン ===== */
+.btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* ===== エラーメッセージ ===== */
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
